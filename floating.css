@@ -9,16 +9,104 @@
   border: 1px solid #333333;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  min-width: 200px;
+  min-width: 160px;
+  max-width: 240px;
   overflow: hidden;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+.jobfill-panel:hover {
+  opacity: 1;
+}
+
+.jobfill-min-btn {
+  background: transparent;
+  border: 1px solid #666;
+  color: #999;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.jobfill-min-btn:hover {
+  color: #fff;
+  border-color: #999;
+}
+
+.jobfill-minimized {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  user-select: none;
+}
+.jobfill-mini-drag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: move;
+  flex: 1;
+}
+.jobfill-minimized:hover {
+  background: #111;
+}
+.jobfill-expand-btn {
+  background: transparent;
+  border: 1px solid #666;
+  color: #999;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: auto;
+}
+.jobfill-expand-btn:hover {
+  color: #fff;
+  border-color: #999;
+}
+.jobfill-logo-mini {
+  font-weight: 600;
+  font-size: 12px;
+  color: #fff;
+}
+.jobfill-mini-dot {
+  min-width: 8px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 9px;
+  background: #333;
+  font-size: 10px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.jobfill-mini-dot:not(:empty) {
+  background: #22c55e;
+  color: #000;
 }
 
 .jobfill-header {
   background: #111111;
-  padding: 10px 14px;
+  padding: 8px 12px;
   cursor: move;
   user-select: none;
   border-bottom: 1px solid #333333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
 }
 
 .jobfill-logo {
@@ -27,8 +115,47 @@
   color: #ffffff;
 }
 
+.jobfill-live {
+  font-size: 9px;
+  color: #22c55e;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  animation: jobfill-live 2s ease-in-out infinite;
+}
+
+@keyframes jobfill-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.jobfill-toast {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  padding: 6px 12px;
+  background: #22c55e;
+  color: #000000;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.jobfill-toast.visible {
+  opacity: 1;
+}
+
+.jobfill-panel {
+  position: relative;
+}
+
 .jobfill-body {
-  padding: 14px;
+  padding: 10px 12px;
 }
 
 .jobfill-state {
@@ -105,4 +232,66 @@
   color: #22c55e;
   font-size: 24px;
   font-weight: bold;
+}
+
+/* Light theme */
+.jobfill-panel[data-theme="light"] {
+  background: #ffffff;
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.jobfill-panel[data-theme="light"] .jobfill-header {
+  background: #f5f5f5;
+  border-bottom-color: #e0e0e0;
+}
+
+.jobfill-panel[data-theme="light"] .jobfill-logo {
+  color: #000000;
+}
+
+.jobfill-panel[data-theme="light"] .jobfill-message {
+  color: #000000;
+}
+
+.jobfill-panel[data-theme="light"] .jobfill-btn {
+  background: #000000;
+  color: #ffffff;
+}
+
+.jobfill-panel[data-theme="light"] .jobfill-btn:hover {
+  background: #333333;
+}
+
+.jobfill-panel[data-theme="light"] .jobfill-progress {
+  background: #e0e0e0;
+}
+
+.jobfill-panel[data-theme="light"] .jobfill-live {
+  color: #16a34a;
+}
+
+.jobfill-panel[data-theme="light"] .jobfill-toast {
+  background: #22c55e;
+  color: #000000;
+}
+.jobfill-panel[data-theme="light"] .jobfill-minimized:hover {
+  background: #f0f0f0;
+}
+.jobfill-panel[data-theme="light"] .jobfill-logo-mini {
+  color: #000;
+}
+.jobfill-panel[data-theme="light"] .jobfill-min-btn,
+.jobfill-panel[data-theme="light"] .jobfill-expand-btn {
+  border-color: #999;
+  color: #666;
+}
+.jobfill-panel[data-theme="light"] .jobfill-min-btn:hover,
+.jobfill-panel[data-theme="light"] .jobfill-expand-btn:hover {
+  border-color: #333;
+  color: #000;
+}
+.jobfill-panel[data-theme="light"] .jobfill-mini-dot:not(:empty) {
+  background: #22c55e;
+  color: #000;
 }
