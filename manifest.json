@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "JobFill AI",
+  "version": "1.0.0",
+  "description": "Analyze resume + job description, then intelligently autofill job application forms",
+  "permissions": ["storage", "sidePanel", "activeTab", "scripting"],
+  "action": {
+    "default_title": "JobFill AI - Open Side Panel"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": [],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["floating.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "toggle-panel": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Toggle floating panel"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generate Icons</title></head>
+<body>
+  <p>Open this file, then right-click each canvas and "Save image as" to icons/icon16.png, icon48.png, icon128.png</p>
+  <canvas id="c16" width="16" height="16"></canvas>
+  <canvas id="c48" width="48" height="48"></canvas>
+  <canvas id="c128" width="128" height="128"></canvas>
+  <script>
+    function draw(ctx, size) {
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, size, size);
+      ctx.fillStyle = '#22c55e';
+      ctx.font = `bold ${size * 0.6}px system-ui`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('J', size/2, size/2);
+    }
+    ['c16','c48','c128'].forEach(id => {
+      const c = document.getElementById(id);
+      draw(c.getContext('2d'), c.width);
+    });
+  </script>
+</body>
+</html>
