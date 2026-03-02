@@ -8,7 +8,7 @@
 
 - **Smart Form Detection** — Automatically scans any job application page and detects all fillable fields
 - **AI-Powered Answers** — Generates context-aware answers using your resume + job description
-- **Multi-Provider Support** — Works with DeepSeek, OpenAI (GPT-4o), and Claude (Anthropic)
+- **Multi-Provider Support** — Works with DeepSeek, OpenAI (GPT-5.1), and Claude (Anthropic)
 - **Cover Letter Generator** — Produces tailored 250-350 word cover letters per application
 - **Job Match Analysis** — Shows match percentage, matched skills, missing skills, and improvement suggestions
 - **One-Click Fill** — Fills all detected fields simultaneously with a single button
