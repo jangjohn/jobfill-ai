@@ -2,13 +2,13 @@
 
 > AI-powered Chrome extension that automatically fills job application forms using your resume and the job description.
 
-![JobFill AI Demo](screenshots/demo.gif)
+![Demo](https://s5.ezgif.com/tmp/ezgif-5ab70288bc52e357.gif)
 
 ## ✨ Features
 
 - **Smart Form Detection** — Automatically scans any job application page and detects all fillable fields
 - **AI-Powered Answers** — Generates context-aware answers using your resume + job description
-- **Multi-Provider Support** — Works with DeepSeek, OpenAI (GPT-5.1), and Claude (Anthropic)
+- **Multi-Provider Support** — Works with DeepSeek, OpenAI (GPT-4o), and Claude (Anthropic)
 - **Cover Letter Generator** — Produces tailored 250-350 word cover letters per application
 - **Job Match Analysis** — Shows match percentage, matched skills, missing skills, and improvement suggestions
 - **One-Click Fill** — Fills all detected fields simultaneously with a single button
